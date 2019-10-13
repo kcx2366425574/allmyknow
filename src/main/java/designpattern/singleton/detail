@@ -1,0 +1,9 @@
+单例模式（应用实例java.lang.Runtime）
+EnumSingleton 使用jdk 1.5的枚举实现单例模式，推荐使用
+HungerSingleton 饿汉模式，静态常量
+HungerSingleton2 饿汉模式，将实例放入静态代码块
+HungerSingleton3 饿汉模式，静态内部类，延迟加载，效率高，强力推荐使用
+LazySingleton 懒汉模式，线程不安全
+LazySingleton2 懒汉模式，线程安全，但是效率低
+LazySingleton3 懒汉模式，线程不安全，同步代码块
+LazySingleton4 懒汉模式，双重检查，线程安全
