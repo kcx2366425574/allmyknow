@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @date 2019-09-04
  * @author kcx
- * @description 同域单点登录
+ * @description 同鍗曠偣鐧诲綍
  */
 public class SSOTest {
 
