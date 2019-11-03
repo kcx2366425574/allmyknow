@@ -26,12 +26,18 @@ public class Graph {
 	private int numOfEdges;
 	
 	/**
+	 * 表示节点是否被访问
+	 */
+	private boolean[] visited;
+	
+	/**
 	 * 构造器
 	 */
 	public Graph(int n) {
 		vertexList = new ArrayList<String>(n);
 		edges = new int[n][n];
 		numOfEdges = 0;
+		visited = new boolean[n];
 	}
 	
 	
@@ -62,6 +68,20 @@ public class Graph {
 		 */
 		graph.showGraph();
 		
+	}
+	
+	/**
+	 * 得到节点的第一个邻接节点
+	 * @param index
+	 * @return
+	 */
+	public int getFirstNeighbor(int index) {
+		for(int j = 0;j<vertexList.size();j++) {
+			if(edges[index][j]>0) {
+				return j;
+			}
+		}
+		return -1;
 	}
 	
 	/**
