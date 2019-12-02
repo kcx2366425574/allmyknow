@@ -4,6 +4,8 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 
+import org.junit.Test;
+
 /**
  * @date 2019-08-29
  * @author kcx
@@ -15,23 +17,23 @@ public class TestInetAddress {
 	public static void main(String[] args) throws UnknownHostException {
 		
 		/**
-		 * »ñÈ¡±¾»úµÄInetAddressÊµÀý
+		 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½InetAddressÊµï¿½ï¿½
 		 */
 		InetAddress address = InetAddress.getLocalHost();
 		
-		System.out.println("¼ÆËã»úÃû³Æ£º"+address.getHostName());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½"+address.getHostName());
 		
-		System.out.println("IPµØÖ·£º"+address.getHostAddress());
+		System.out.println("IPï¿½ï¿½Ö·ï¿½ï¿½"+address.getHostAddress());
 		
 		/**
-		 * »ñÈ¡×Ö½ÚÊý×éÐÎÊ½µÄIPµØÖ·
+		 * ï¿½ï¿½È¡ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½IPï¿½ï¿½Ö·
 		 */
 		byte[] bytes = address.getAddress();
 		
-		System.out.println("×Ö½ÚÊý×éÐÎÊ½µÄIPµØÖ·:"+Arrays.toString(bytes));
+		System.out.println("ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½IPï¿½ï¿½Ö·:"+Arrays.toString(bytes));
 		
 		/**
-		 * Ö±½ÓÊä³öInetAddress¶ÔÏó
+		 * Ö±ï¿½ï¿½ï¿½ï¿½ï¿½InetAddressï¿½ï¿½ï¿½ï¿½
 		 */
 		System.out.println(address);
 		
@@ -39,9 +41,11 @@ public class TestInetAddress {
 		
 		InetAddress address2 = InetAddress.getByName("192.168.223.1");
 		
-		System.out.println("¼ÆËã»úÃû³Æ£º"+address2.getHostName());
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½"+address2.getHostName());
 		
-		System.out.println("IPµØÖ·£º"+address2.getHostAddress());		
+		System.out.println("IPï¿½ï¿½Ö·ï¿½ï¿½"+address2.getHostAddress());		
 		
 	}
+	
+	
 }

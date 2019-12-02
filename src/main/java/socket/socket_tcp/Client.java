@@ -1,73 +1,40 @@
 package socket.socket_tcp;
 
-import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- * @date 2019-08-30
+ * @date 2019-11-07
  * @author kcx
- * @description ¿Í»§¶Ë
- *
+ * @description 
  */
 public class Client {
-
+	
 	public static void main(String[] args) {
-		
+
+		Socket socket = null;
+		PrintWriter pWriter = null;
 		
 		try {
-			/**
-			 * 1.´´½¨¿Í»§¶Ësocket£¬Ö¸¶¨·şÎñÆ÷µØÖ·ºÍ¶Ë¿Ú
-			 */
-			Socket socket = new Socket("localhost", 8888);
-			
-			/**
-			 * 2.»ñÈ¡×Ö½ÚÊä³öÁ÷£¬Ïò·şÎñÆ÷¶Ë·¢ËÍĞÅÏ¢
-			 */
-			OutputStream os = socket.getOutputStream();
-			
-			/**
-			 * 3.½«Êä³öÁ÷°ü×°³É´òÓ¡Á÷
-			 */
-			PrintWriter pw = new PrintWriter(os);
-			
-			pw.write("ÓÃ»§Ãû: admin;ÃÜÂë: 123");
-			pw.flush();
-			
-			socket.shutdownOutput();
-			
-			/**
-			 * »ñÈ¡ÊäÈëÁ÷£¬ÓÃÀ´¶ÁÈ¡·şÎñÆ÷¶ËµÄÏìÓ¦ĞÅÏ¢
-			 */
-			InputStream is = socket.getInputStream();
-			BufferedReader br = new BufferedReader(new InputStreamReader(is));
-			
-			String info = null;
-			
-			/**
-			 * Ñ­»·¶ÁÈ¡·şÎñÆ÷¶ËµÄĞÅÏ¢
-			 */
-			while((info=br.readLine())!=null) {
-				System.out.println("ÎÒÊÇ¿Í»§¶Ë,·şÎñÆ÷Ëµ£º"+info);
-			}
-			
-			/**
-			 * ¹Ø±ÕÏà¹Ø×ÊÔ´
-			 */
-			br.close();
-			is.close();
-			pw.close();
-			os.close();
-			socket.close();
+			socket = new Socket("127.0.0.1", 28888);
+			pWriter = new PrintWriter(socket.getOutputStream());
+			pWriter.write("æˆ‘æ˜¯æ—·èªè´¤");
+		
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				pWriter.close();
+				socket.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }

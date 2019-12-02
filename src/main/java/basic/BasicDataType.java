@@ -9,10 +9,6 @@ package basic;
  * 真假类型 boolean
  */
 
-import java.util.Stack;
-
-import test.test1.Str;
-
 public class BasicDataType {
 
 	/**
